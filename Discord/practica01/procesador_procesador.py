@@ -30,24 +30,29 @@ def mostrar_ayuda():
     )
 def iniciar_agente():
      nombre_bot="Susanita"
-     Prefijo="!"
+     Prefijo= "!"
      hora_inicio=datetime.datetime.now()
      print(f"{obtener_saludo(nombre_bot)}")
      print("escribe !ayuda para ver los comandos disponibles.")
 
      ejecutando=True
      while ejecutando:
-        entrada=input(f"{nombre_bot} Ingrese comando").strip()
+        entrada=input(f"{nombre_bot} Ingrese comando: ").strip()
 
         if not entrada.startswith(Prefijo):
             print("comando no reconocido.")
             continue
-        partes= entrada[len(Prefijo)].split(maxsplit=1)
-        comando= partes[1] if len(partes)>1 else ""
+
+        partes= entrada[len(Prefijo):].split(maxsplit=1)
+        comando= partes[0].lower()
+        argumento=partes[1] if len(partes) > 1 else ""
+
         if comando =="saludo":
           print(obtener_saludo(nombre_bot))
         elif comando =="ayuda":
          print(mostrar_ayuda()) 
+        elif comando == "uptime":
+            print(calcular_uptime(hora_inicio))
         else:
          print("comando no reconocido")
 
