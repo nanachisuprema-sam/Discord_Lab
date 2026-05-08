@@ -6,6 +6,7 @@ def obtener_saludo (nombre_bot):
     """
     return f"hola, soy {nombre_bot} y quiero ayudarte"
 def procesar_comando (comando):
+    
 
     """
     valida y procesa la acción de recortar dato
