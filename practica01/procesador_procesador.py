@@ -1,6 +1,7 @@
 import datetime
 
 def obtener_saludo (nombre_bot):
+    
     """
     retorna saludo
     """
