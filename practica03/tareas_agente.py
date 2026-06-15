@@ -33,7 +33,7 @@ def eliminar_tarea(lista_tareas, indice):
     #agregamos logica para preguntar
     # 
     #si el elemento en la lista y eliminarlo
-    if 0 <= indice < len(listar_tareas):
+    if 0 <= indice < len(lista_tareas):
         tarea_eliminada=lista_tareas.pop(indice)
     else:
         return "error: no existe la tarea"
